@@ -1,88 +1,161 @@
-# 🛡️ Hybrid SSO and Centralized Security Monitoring
+# 🛡️ Hybrid SSO and Centralized Security Monitoring with Wazuh SIEM
 
-A group project developed for the **Network Security Infrastructure and Design** course, demonstrating cross-platform Single Sign-On (SSO) using Windows Active Directory and centralized security monitoring using Wazuh SIEM.
-
----
-
-## 📖 Overview
-
-This project implements a hybrid security infrastructure that integrates Windows Server and Ubuntu Linux through Active Directory-based Single Sign-On (SSO). A centralized monitoring platform using Wazuh SIEM collects and analyses security events from both operating systems, while Suricata provides network intrusion detection capabilities.
+A group project developed for the **Network Security Infrastructure and Design** course at Universiti Teknikal Malaysia Melaka (UTeM). This project demonstrates cross-platform Single Sign-On (SSO) between Windows and Linux environments while implementing centralized security monitoring using Wazuh SIEM and Suricata IDS.
 
 ---
 
-## 🎯 Objectives
+## 📖 Project Overview
+
+Modern organizations often operate in hybrid environments consisting of Windows and Linux systems. Managing authentication and monitoring security events across multiple operating systems can be challenging.
+
+This project integrates **Windows Active Directory**, **Ubuntu Linux**, **Kerberos**, **SSSD**, **Wazuh SIEM**, and **Suricata IDS** to create a centralized authentication and security monitoring solution.
+
+The system enables Linux users to authenticate using Active Directory accounts while continuously monitoring authentication activities, privilege escalation attempts, and suspicious network behaviour from a centralized Wazuh dashboard.
+
+---
+
+## 🎯 Project Objectives
 
 - Implement Active Directory Domain Services (AD DS)
-- Configure cross-platform SSO using Kerberos and SSSD
+- Configure cross-platform Single Sign-On (SSO)
+- Integrate Ubuntu with Windows Active Directory
 - Deploy Wazuh SIEM for centralized monitoring
-- Detect authentication failures and privilege escalation
-- Monitor suspicious network activities using Suricata
-- Evaluate the effectiveness of the implemented security controls
+- Collect logs from Windows and Linux systems
+- Detect authentication failures and brute-force attacks
+- Monitor privilege escalation activities
+- Detect suspicious network traffic using Suricata IDS
 
 ---
 
-## 🛠 Technologies
+## 🏗️ System Architecture
 
-- Windows Server 2019
-- Ubuntu Server
-- Ubuntu Desktop
-- Active Directory
-- Kerberos
-- SSSD
-- Wazuh SIEM
-- Wazuh Agent
-- Suricata IDS
-- Oracle VM VirtualBox
-- Nmap
+![System Architecture](architecture/system-architecture.jpg)
+
+---
+
+## 🛠️ Technologies Used
+
+| Category | Technologies |
+|----------|--------------|
+| Operating Systems | Windows Server 2019, Ubuntu Server, Ubuntu Desktop |
+| Identity Management | Active Directory Domain Services (AD DS) |
+| Authentication | Kerberos, SSSD |
+| SIEM | Wazuh Manager, Wazuh Agent |
+| Network Security | Suricata IDS |
+| Virtualization | Oracle VM VirtualBox |
+| Testing Tool | Nmap |
+
+---
+
+## ⚙️ System Workflow
+
+1. Configure Windows Server as the Active Directory Domain Controller.
+2. Join Ubuntu Linux to the Active Directory domain using Kerberos and SSSD.
+3. Install and configure Wazuh Manager.
+4. Deploy Wazuh Agents on monitored systems.
+5. Install and configure Suricata IDS.
+6. Collect authentication and system logs.
+7. Analyse security events through the Wazuh Dashboard.
+8. Validate security monitoring using attack simulation and detection testing.
 
 ---
 
 ## 👩‍💻 My Contribution
 
-This project was completed as a group assignment.
+This project was completed as a **group assignment**.
 
-My primary contribution focused on the Wazuh SIEM implementation, including:
+My primary responsibilities focused on the implementation of **Wazuh SIEM**, including:
 
 - Installing and configuring Wazuh Manager
 - Deploying Wazuh Agents
 - Monitoring authentication logs
 - Analysing security alerts
-- Validating brute-force detection
+- Validating brute-force attack detection
 - Monitoring privilege escalation events
-- Verifying Nmap detection
+- Verifying Nmap scan detection
+- Testing security monitoring functionality
 
 ---
 
-## 📸 System Architecture
+## 📸 System Demonstration
 
-*(Architecture diagram will be added here.)*
+### Wazuh Dashboard
 
----
-
-## 📸 System Preview
-
-*(Screenshots will be added here.)*
+![Wazuh Dashboard](screenshots/wazuh-dashboard.png)
 
 ---
 
-## 📚 What I Learned
+### Log Collection
 
-- Cross-platform authentication using Active Directory
-- Kerberos authentication
-- Linux integration with Windows domains
-- SIEM deployment
-- Security event monitoring
-- Log analysis
-- Network intrusion detection
-- Security testing using Nmap
+![Log Collection](screenshots/log-collection.png)
+
+---
+
+### Suricata Alert Detection
+
+![Suricata Alert](screenshots/suricata-alert.png)
+
+---
+
+### Security Alerts
+
+![Security Alerts](screenshots/security-alerts.png)
+
+---
+
+## 🧪 Testing Results
+
+The implemented security monitoring solution was validated through several security test scenarios.
+
+| Test Scenario | Result |
+|--------------|--------|
+| Valid Linux Active Directory Login | ✅ PASS |
+| Invalid Password Login Detection | ✅ PASS |
+| Brute Force Attack Detection | ✅ PASS |
+| Privilege Escalation Detection | ✅ PASS |
+| Nmap Scan Detection | ✅ PASS |
+
+These test cases demonstrate that the centralized monitoring platform successfully detected and recorded important security events from both Windows and Linux environments.
+
+---
+
+## 📚 Skills Demonstrated
+
+- Active Directory Administration
+- Linux Administration
+- Windows Server Administration
+- Wazuh SIEM Deployment
+- Security Information and Event Management (SIEM)
+- Log Collection and Analysis
+- Kerberos Authentication
+- Cross-platform Identity Management
+- Intrusion Detection System (IDS)
+- Security Monitoring
+- Network Security
+- Virtualization using Oracle VM VirtualBox
+
+---
+
+## 📖 What I Learned
+
+Throughout this project, I gained practical experience in:
+
+- Deploying enterprise security monitoring solutions
+- Integrating Linux with Windows Active Directory
+- Configuring Kerberos authentication
+- Analysing authentication and security logs
+- Detecting suspicious activities using SIEM
+- Working with Wazuh and Suricata
+- Performing security validation using attack simulations
+- Troubleshooting cross-platform authentication issues
 
 ---
 
 ## ⚠️ Disclaimer
 
-This repository is shared for educational and portfolio purposes only.
+This repository is intended for **educational and portfolio purposes only**.
 
-The project was completed as a group assignment. This repository highlights my contribution to the Wazuh SIEM implementation and security monitoring components. Sensitive information has been removed.
+The project was completed as a university group assignment. This repository highlights **my individual contribution**, which primarily focused on the implementation and validation of **Wazuh SIEM**. Any sensitive information, credentials, IP addresses, or institutional details have been removed before publication.
 
 ---
 
@@ -90,8 +163,8 @@ The project was completed as a group assignment. This repository highlights my c
 
 **Amni Aqilah**
 
-📧 amniaqilah24@gmail.com
+Bachelor of Computer Science (Computer Security) with Honours
 
-🔗 LinkedIn: https://www.linkedin.com/in/amni-aqilah-b94283371/
+📧 **Email:** amniaqilah24@gmail.com
 
-💻 GitHub: https://github.com/amninraqilah
+💼 **LinkedIn:** https://www.linkedin.com/in/amni-aqilah-b94283371/
